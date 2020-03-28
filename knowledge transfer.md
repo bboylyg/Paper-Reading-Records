@@ -1,6 +1,6 @@
 1.Adversarial-Based Knowledge Distillation for Multi-Model Ensemble and Noisy Data Refinement(2019)  
-author:Zhiqiang Shen, Zhankui He, Wanyun Cui, Jiahui Yu, Yutong Zheng, Chenchen Zhu, Marios Savvides    
-link:https://arxiv.org/pdf/1908.08520  
+*author*: Zhiqiang Shen, Zhankui He, Wanyun Cui, Jiahui Yu, Yutong Zheng, Chenchen Zhu, Marios Savvides    
+*link*: https://arxiv.org/pdf/1908.08520  
 
 **outline**  
 本文作者提出了将多个模型蒸馏成为一个模型的框架。亮点在于，对教师模型和学生模型的中间输出使用由多层感知机组成的判别器进行对抗训练匹配。  
