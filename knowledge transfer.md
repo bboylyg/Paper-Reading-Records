@@ -3,7 +3,8 @@ author:Zhiqiang Shen, Zhankui He, Wanyun Cui, Jiahui Yu, Yutong Zheng, Chenchen 
 link:https://arxiv.org/pdf/1908.08520  
 
 **outline**  
-本文作者提出了将多个模型蒸馏成为一个模型的框架。亮点在于，对教师模型和学生模型的中间输出使用由多层感知机组成的判别器进行对抗训练匹配。
+本文作者提出了将多个模型蒸馏成为一个模型的框架。亮点在于，对教师模型和学生模型的中间输出使用由多层感知机组成的判别器进行对抗训练匹配。  
+![](https://github.com/bboylyg/Paper-Reading-Records/blob/master/attention%20transfer%20pics/1.png)  
 **loss function**  
 $$
 \mathcal{L}=\alpha \mathcal{L}_{S i m}+\beta \mathcal{L}_{G A N}
