@@ -36,3 +36,115 @@ $$
 （3）self learning process loss(local training loss: public samples and the ground truth labels)  
 **Review**  
 文章提出的私有数据到共有数据的转移，idea很好。但是实验代码没有放出来，对于结果的真实性和效果，有待考证。  
+
+-----------------------------------------------------------------------------------------------
+
+3.Be Your Own Teacher, Improve the Performance of Convolutional Neural Networks via Self Distillation(2019 ICCV)  
+*author*: Linfeng Zhang, et al.
+*link*: https://arxiv.org/abs/1905.08094
+
+**outline**  
+
+作者提出一种新的 self-distillation 的策略，用网络深层的特征和预测结果去监督浅层网络的学习。  
+
+![](https://github.com/bboylyg/Paper-Reading-Records/blob/master/attention%20transfer%20pics/3.png)  
+
+**Method**   
+
+作者的方法比较直观简单，如下框图，作者共提出了三种监督信息，全都是从网络深层传至网络浅层，网络共分为四块，每一块得到一个特征图，特征图后接全连接网络和 softmax 得到预测结果，作者称其为浅层 classifier 和深层 classifier。三种监督信息分别是
+
+特征监督，深层的特征图对比浅层特征图。
+标签监督，网络最后 softmax 输出的软标签对比前面 3 个浅层分类器得到的软标签。
+真实数据监督，one-hot 对比各个分类器的输出。
+整体的 loss 如下，C 为分类器的个数，即将网络切分的个数。
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>s</mi>
+  <mi>s</mi>
+  <mo>=</mo>
+  <munderover>
+    <mo>&#x2211;<!-- ∑ --></mo>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>i</mi>
+      <mo>=</mo>
+      <mn>1</mn>
+    </mrow>
+    <mi>C</mi>
+  </munderover>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>&#x2212;<!-- − --></mo>
+  <mi>&#x03B1;<!-- α --></mi>
+  <mo stretchy="false">)</mo>
+  <mo>&#x22C5;<!-- ⋅ --></mo>
+  <mi>C</mi>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>s</mi>
+  <mi>s</mi>
+  <mi>E</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>p</mi>
+  <mi>y</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>q</mi>
+    <mi>i</mi>
+  </msup>
+  <mo>,</mo>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+  <mo>+</mo>
+  <mi>&#x03B1;<!-- α --></mi>
+  <mo>&#x22C5;<!-- ⋅ --></mo>
+  <mi>K</mi>
+  <mi>L</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>q</mi>
+    <mi>i</mi>
+  </msup>
+  <mo>,</mo>
+  <msup>
+    <mi>q</mi>
+    <mi>C</mi>
+  </msup>
+  <mo stretchy="false">)</mo>
+  <mo>+</mo>
+  <mi>&#x03BB;<!-- λ --></mi>
+  <mo>&#x22C5;<!-- ⋅ --></mo>
+  <mrow class="MJX-TeXAtom-ORD">
+    <mo stretchy="false">|</mo>
+  </mrow>
+  <mrow class="MJX-TeXAtom-ORD">
+    <mo stretchy="false">|</mo>
+  </mrow>
+  <msub>
+    <mi>f</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>&#x2212;<!-- − --></mo>
+  <msub>
+    <mi>F</mi>
+    <mi>C</mi>
+  </msub>
+  <mrow class="MJX-TeXAtom-ORD">
+    <mo stretchy="false">|</mo>
+  </mrow>
+  <msubsup>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mo stretchy="false">|</mo>
+    </mrow>
+    <mn>2</mn>
+    <mn>2</mn>
+  </msubsup>
+</math>
+**Review**  
+在cifar10和cifar100上做了实验。  
+开源代码： https://github.com/luanyunteng/pytorch-be-your-own-teacher
+
+------------------------------------------------------------------------
