@@ -53,10 +53,11 @@ $$
 
 作者的方法比较直观简单，如下框图，作者共提出了三种监督信息，全都是从网络深层传至网络浅层，网络共分为四块，每一块得到一个特征图，特征图后接全连接网络和 softmax 得到预测结果，作者称其为浅层 classifier 和深层 classifier。三种监督信息分别是
 
-特征监督，深层的特征图对比浅层特征图。
-标签监督，网络最后 softmax 输出的软标签对比前面 3 个浅层分类器得到的软标签。
-真实数据监督，one-hot 对比各个分类器的输出。
-整体的 loss 如下，C 为分类器的个数，即将网络切分的个数。
+- 特征监督，深层的特征图对比浅层特征图。
+- 标签监督，网络最后 softmax 输出的软标签对比前面 3 个浅层分类器得到的软标签。
+- 真实数据监督，one-hot 对比各个分类器的输出。
+整体的 loss 如下，C 为分类器的个数，即将网络切分的个数。  
+
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mi>l</mi>
   <mi>o</mi>
@@ -142,7 +143,7 @@ $$
     <mn>2</mn>
     <mn>2</mn>
   </msubsup>
-</math>
+</math>  
 **Review**  
 在cifar10和cifar100上做了实验。  
 开源代码： https://github.com/luanyunteng/pytorch-be-your-own-teacher
