@@ -1,4 +1,6 @@
-1.Adversarial-Based Knowledge Distillation for Multi-Model Ensemble and Noisy Data Refinement(2019)  
+[TOC]  
+
+## 1.Adversarial-Based Knowledge Distillation for Multi-Model Ensemble and Noisy Data Refinement(2019)  
 *author*: Zhiqiang Shen, Zhankui He, Wanyun Cui, Jiahui Yu, Yutong Zheng, Chenchen Zhu, Marios Savvides    
 *link*: https://arxiv.org/pdf/1908.08520  
 
@@ -17,7 +19,7 @@ $$
 
 ----------------------------------------------------------------------------------------------------  
 
-2.Private Model Compression via Knowledge Distillation(2018)  
+## 2.Private Model Compression via Knowledge Distillation(2018)  
 *author*: Ji Wang1, Weidong Bao1, Lichao Sun2, Xiaomin Zhu13, Bokai Cao4, Philip S. Yu  
 *link*: https://arxiv.org/pdf/1908.08520  
 
@@ -39,9 +41,10 @@ $$
 
 -----------------------------------------------------------------------------------------------
 
-3.Be Your Own Teacher, Improve the Performance of Convolutional Neural Networks via Self Distillation(2019 ICCV)  
-*author*: Linfeng Zhang, et al.
-*link*: https://arxiv.org/abs/1905.08094
+## 3.Be Your Own Teacher, Improve the Performance of Convolutional Neural Networks via Self Distillation(2019 ICCV)  
+*author*: Linfeng Zhang, et al.  
+*link*: https://arxiv.org/abs/1905.08094  
+*开源代码*： https://github.com/luanyunteng/pytorch-be-your-own-teacher  
 
 **outline**  
 
@@ -146,6 +149,6 @@ $$
 </math>  
 **Review**  
 在cifar10和cifar100上做了实验。  
-开源代码： https://github.com/luanyunteng/pytorch-be-your-own-teacher
+
 
 ------------------------------------------------------------------------
